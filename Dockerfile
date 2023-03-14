@@ -1,8 +1,8 @@
-FROM rust:1.67
+FROM rustlang/rust:nightly
 
 WORKDIR /usr/src/myapp
 COPY . .
 
-RUN cargo build --release -Z sparse-registry
+RUN cargo +nightly build --release -Z sparse-registry
 
 CMD /usr/src/myapp/target/release/ord
